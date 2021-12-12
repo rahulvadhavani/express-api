@@ -1,0 +1,454 @@
+{
+	"info": {
+		"_postman_id": "e4ecc719-e73f-42cb-b7c0-deaf3e467698",
+		"name": "Ecom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"heyrv\",\r\n    \"email\":\"hello@rv.com\",\r\n    \"password\":\"123456\",\r\n    \"confirm_password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}auth/register",
+					"host": [
+						"{{local}}auth"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@admin.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}auth/login",
+					"host": [
+						"{{local}}auth"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFjOGNhMDk3ZjhmYTA0N2I1MjAzYjMiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MzkyMjMzMTIsImV4cCI6MTY3MDc1OTMxMn0.45ELPMJaCbcy8BVXp_CgCWoiRrHZGnL7N4ccES_6LOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{local}}user/get-profile",
+					"host": [
+						"{{local}}user"
+					],
+					"path": [
+						"get-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFjOGNhMDk3ZjhmYTA0N2I1MjAzYjMiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MzkyMTg4MzIsImV4cCI6MTY3MDc3NjQzMn0.xskrVE_dQ4OU-wlw5adqNZqwhmmGWRnRfw1CZrGHSA8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}auth/refresh",
+					"host": [
+						"{{local}}auth"
+					],
+					"path": [
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFjOGNhMDk3ZjhmYTA0N2I1MjAzYjMiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2Mzg3MjY0MTQsImV4cCI6MTYzODcyNjQ3NH0.mmP12yFq2dDbubr9ot6wCG-aFCTnR1oCbDyX55n0t58",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"heyyyrvvv\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/update-profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"update-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFjOGNhMDk3ZjhmYTA0N2I1MjAzYjMiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MzkyMTk3OTEsImV4cCI6MTYzOTIxOTg1MX0.JKZt7TlCp3oHtgRS7Fs8DKjA9Jlefcw1aYNqkM3m8Nw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFjOGNhMDk3ZjhmYTA0N2I1MjAzYjMiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MzkyMTg4MzIsImV4cCI6MTY3MDc3NjQzMn0.xskrVE_dQ4OU-wlw5adqNZqwhmmGWRnRfw1CZrGHSA8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{local}}admin/product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI0ODgwNzFjODgyN2ZkYjU3NDUxNTYiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MzkyMzE5MzksImV4cCI6MTY3MDc2NzkzOX0.132H7Lj8O_-pBBFXs93sRrcjYWBNf6IbHClofArZLwI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "rvv1123456789",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "5000",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "L",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "b1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}admin/product",
+					"host": [
+						"{{local}}admin"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{local}}admin/product/61b4b73b975286f95718755f",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI0ODgwNzFjODgyN2ZkYjU3NDUxNTYiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MzkyMzE5MzksImV4cCI6MTY3MDc2NzkzOX0.132H7Lj8O_-pBBFXs93sRrcjYWBNf6IbHClofArZLwI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "rvvchanged",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "5000",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "L",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/rahul/OneDrive/Desktop/JS_PROJECTS/file-sharing/public/images/favicon.ico"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}admin/product/61b4b73b975286f95718755f",
+					"host": [
+						"{{local}}admin"
+					],
+					"path": [
+						"product",
+						"61b4b73b975286f95718755f"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "61b4b73b975286f95718755f",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{local}}admin/product/61b4b2035968268151e88c18",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI0ODgwNzFjODgyN2ZkYjU3NDUxNTYiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MzkyMzE5MzksImV4cCI6MTY3MDc2NzkzOX0.132H7Lj8O_-pBBFXs93sRrcjYWBNf6IbHClofArZLwI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "rvvchanged",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "5000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "L",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}admin/product/61b4c20819c6681cc9e42f71",
+					"host": [
+						"{{local}}admin"
+					],
+					"path": [
+						"product",
+						"61b4c20819c6681cc9e42f71"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "61b4b73b975286f95718755f",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{local}}admin/product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI0ODgwNzFjODgyN2ZkYjU3NDUxNTYiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MzkyMzE5MzksImV4cCI6MTY3MDc2NzkzOX0.132H7Lj8O_-pBBFXs93sRrcjYWBNf6IbHClofArZLwI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "rvv",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "5000",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "L",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "b1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}admin/product/61b4c20819c",
+					"host": [
+						"{{local}}admin"
+					],
+					"path": [
+						"product",
+						"61b4c20819c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
