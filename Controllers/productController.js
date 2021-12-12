@@ -121,6 +121,7 @@ const productController = {
             }
             return res.status(200).json({status:true,message:"products get successfully.",data:product}); 
         } catch (error) {
+            console.log(error);
             return next(error);  
         }  
     },
