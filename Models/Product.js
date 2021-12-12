@@ -1,6 +1,7 @@
 import Mongoose from 'mongoose';
 import {APP_URL} from '../Config';
 
+
 const Schema = Mongoose.Schema;
 const productSchema = new Schema({
     name: {type:String,required:true},
